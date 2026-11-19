@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Velvet Heat — a GTA 6-style cover art studio: nine-panel posters, dual ink + photo engines, six templates, export in three post sizes.">
+<title>Velvet Heat — Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<noscript><p class="noscript">Velvet Heat needs JavaScript to draw your cover.</p></noscript>
+<header>
+  <h1>Velvet Heat <span>— Cover Studio</span></h1>
+  <p class="tag">A GTA-style cover maker: nine panels, two engines, three post sizes.</p>
+</header>
+<main id="app">
+  <section class="preview" aria-label="Cover preview">
+    <canvas id="cover" width="1080" height="1080" aria-label="Cover preview canvas"></canvas>
+    <div id="export-showcase" class="shot-showcase" hidden></div>
+    <div id="dual-showcase" class="shot-showcase" hidden></div>
+  </section>
+  <aside class="controls" aria-label="Cover controls">
+    <section aria-labelledby="templates-h">
+      <h2 id="templates-h">Template</h2>
+      <div id="templates" class="btn-row" role="group" aria-label="Template"></div>
+    </section>
+    <section aria-labelledby="engine-h">
+      <h2 id="engine-h">Engine</h2>
+      <div class="btn-row" role="radiogroup" aria-label="Engine">
+        <label><input type="radio" name="engine" value="ink" checked> Ink</label>
+        <label><input type="radio" name="engine" value="photo"> Photo</label>
+      </div>
+    </section>
+    <section aria-labelledby="grade-h">
+      <h2 id="grade-h">Grade</h2>
+      <label for="grade">Colour grade</label>
+      <select id="grade" aria-label="Colour grade"></select>
+    </section>
+    <section aria-labelledby="photos-h">
+      <h2 id="photos-h">Photo</h2>
+      <div id="photos" class="btn-row" role="group" aria-label="Photo"></div>
+      <label class="upload-label">Upload your own
+        <input type="file" id="upload" accept="image/*" aria-label="Upload your own photo">
+      </label>
+    </section>
+    <section aria-labelledby="words-h">
+      <h2 id="words-h">Words</h2>
+      <label for="caption">Title</label>
+      <input type="text" id="caption" maxlength="60" aria-label="Cover title" autocomplete="off">
+      <label for="subtitle">Subtitle (script)</label>
+      <input type="text" id="subtitle" maxlength="40" aria-label="Cover subtitle" autocomplete="off">
+      <label for="tagline">Tagline (up to 100 characters)</label>
+      <input type="text" id="tagline" maxlength="100" aria-label="Cover tagline" autocomplete="off">
+    </section>
+    <section aria-labelledby="panel-h">
+      <h2 id="panel-h">Selected panel</h2>
+      <p id="selected-panel" aria-live="polite">Panel 5 of 9</p>
+      <label for="rotate">Rotate (degrees)</label>
+      <input type="range" id="rotate" min="-45" max="45" step="1" value="0" aria-label="Rotate selected panel">
+      <label for="zoom">Zoom</label>
+      <input type="range" id="zoom" min="1" max="3" step="0.05" value="1" aria-label="Zoom selected panel">
+      <label for="panel-grade">Panel grade</label>
+      <select id="panel-grade" aria-label="Selected panel grade">
+        <option value="">Inherit</option>
+      </select>
+      <label for="panel-engine">Panel engine</label>
+      <select id="panel-engine" aria-label="Selected panel engine">
+        <option value="">Inherit</option>
+        <option value="ink">Ink</option>
+        <option value="photo">Photo</option>
+      </select>
+      <p class="hint">Click a panel to select it. Drag to move its photo, scroll to zoom.</p>
+    </section>
+    <section class="actions" aria-label="Actions">
+      <button type="button" id="undo" aria-label="Undo">Undo</button>
+      <button type="button" id="redo" aria-label="Redo">Redo</button>
+      <button type="button" id="export-all" class="primary">Export all 3 sizes</button>
+    </section>
+    <p id="status" role="status" aria-live="polite">Ready.</p>
+  </aside>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

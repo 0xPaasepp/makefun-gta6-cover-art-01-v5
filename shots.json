@@ -1,0 +1,26 @@
+[
+  {
+    "h": 720,
+    "name": "1-cover.jpg",
+    "query": "?shot=cover&photo=portrait&caption=Velvet%20Heat",
+    "w": 1280
+  },
+  {
+    "h": 720,
+    "name": "2-dual-engine.jpg",
+    "query": "?shot=dual&photo=portrait&caption=Velvet%20Heat",
+    "w": 1280
+  },
+  {
+    "h": 720,
+    "name": "3-editor.jpg",
+    "query": "?shot=editor&photo=convertible&caption=Velvet%20Heat",
+    "w": 1280
+  },
+  {
+    "h": 720,
+    "name": "4-export.jpg",
+    "query": "?shot=export&photo=marina&caption=Velvet%20Heat",
+    "w": 1280
+  }
+]
